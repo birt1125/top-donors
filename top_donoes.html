@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Donors</title>
+    <style>
+        body {
+            background-color: transparent;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #donors {
+            font-size: 24px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="donors">Loading...</div>
+    <script>
+        // ใส่ข้อมูลผู้บริจาคที่คุณมี
+        const topDonors = [
+            { name: "ชื่อคนแรก", amount: 100 },
+            { name: "ชื่อคนที่สอง", amount: 200 },
+            { name: "ชื่อคนที่สาม", amount: 300 },
+            { name: "ชื่อคนที่สี่", amount: 400 },
+            { name: "ชื่อคนที่ห้า", amount: 500 },
+        ];
+
+        let donorsHtml = '<h2>Top Donors</h2><ul>';
+        topDonors.forEach(donor => {
+            donorsHtml += <li>${donor.name} - ฿${donor.amount}</li>;
+        });
+        donorsHtml += '</ul>';
+        document.getElementById('donors').innerHTML = donorsHtml;
+    </script>
+</body>
+</html>
+
